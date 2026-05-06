@@ -1,0 +1,487 @@
+<!DOCTYPE html><html class="light" lang="ru"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdad4",
+                        "on-secondary-container": "#616363",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed-variant": "#474747",
+                        "tertiary": "#000000",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-container": "#848484",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#4c4546",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#000000",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "primary-container": "#1b1b1b",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c6c6c6",
+                        "secondary-container": "#dfe0e0",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#930100",
+                        "error": "#ba1a1a",
+                        "background": "#f9f9f9",
+                        "secondary": "#5d5f5f",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-low": "#f4f3f3",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary-fixed": "#410000",
+                        "outline": "#7e7576",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#410000",
+                        "on-tertiary-container": "#ff291a",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-fixed": "#1b1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-x": "40px",
+                        "container-max": "1440px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "display": ["Rubik"],
+                        "body-lg": ["Rubik"],
+                        "h1": ["Rubik"],
+                        "label-bold": ["Rubik"],
+                        "h3": ["Rubik"],
+                        "h2": ["Rubik"],
+                        "body-md": ["Rubik"],
+                        "label-sm": ["Rubik"]
+                    },
+                    "fontSize": {
+                        "display": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .search-input::placeholder {
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased">
+<!-- 1. TopNavBar -->
+<nav class="bg-white fixed top-0 w-full z-50 border-b border-gray-200 flat no-shadows">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center px-12 h-20">
+<div class="flex items-center gap-8 flex-1">
+<div class="text-2xl font-black tracking-tighter text-black uppercase shrink-0">PREMIUM BRAND</div>
+<div class="relative hidden lg:block w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl">search</span>
+<input class="w-full bg-gray-50 border-none py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-black search-input uppercase tracking-wider" placeholder="Поиск товаров..." type="text">
+</div>
+</div>
+<div class="hidden md:flex space-x-12 px-8">
+<a class="font-['Rubik'] font-medium text-sm tracking-widest uppercase text-black border-b border-black pb-1 hover:text-black transition-colors duration-300" href="#">Главная</a>
+<a class="font-['Rubik'] font-medium text-sm tracking-widest uppercase text-gray-400 hover:text-black transition-colors duration-300" href="#">Прайс</a>
+<a class="font-['Rubik'] font-medium text-sm tracking-widest uppercase text-gray-400 hover:text-black transition-colors duration-300" href="#">О компании</a>
+<a class="font-['Rubik'] font-medium text-sm tracking-widest uppercase text-gray-400 hover:text-black transition-colors duration-300" href="#">Баллы</a>
+</div>
+<div class="flex items-center gap-6 flex-1 justify-end">
+<button class="flex items-center gap-2 hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-black" data-icon="stars">stars</span>
+<span class="font-label-bold text-[10px] tracking-widest uppercase hidden xl:block">5,400 баллов</span>
+</button>
+<button class="font-label-bold text-label-bold tracking-widest uppercase hover:opacity-70 transition-opacity">ВОЙТИ</button>
+</div>
+</div>
+</nav>
+<!-- 2. HERO -->
+<section class="w-full h-[90vh] relative overflow-hidden mt-20">
+<img alt="" class="w-full h-full object-cover" data-alt="High-end luxury minimalist fashion campaign imagery with deep shadows and dramatic lighting." src="https://a.lovart.ai/artifacts/agent/rCu17hcN8RGu9V8D.png">
+</section>
+<!-- 3. TEXT (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[100px] text-center">
+<h1 class="font-h1 text-h1 mb-6">PREMIUM BRAND</h1>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto text-secondary">Совершенство в каждой детали. Создаем опыт, который переопределяет стандарты индустрии.</p>
+</section>
+<!-- 4. PROMO (Full) -->
+<section class="bg-primary py-[120px]">
+<div class="max-w-[1440px] mx-auto px-12 text-center">
+<h2 class="font-h2 text-h2 text-white mb-10 tracking-widest uppercase">ЛЕТНЯЯ КОЛЛЕКЦИЯ 2024</h2>
+<button class="bg-white text-black font-label-bold text-label-bold px-10 py-5 hover:bg-black hover:text-white hover:border hover:border-white transition-all duration-300 uppercase">Узнать больше</button>
+</div>
+</section>
+<!-- 5. GOODS_PREVIEW (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px]">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6"><div class="w-full">
+<h2 class="font-h2 text-h2 uppercase mb-12">НАШИ ТОВАРЫ</h2>
+<div class="flex flex-col gap-8">
+<!-- Filters and View All Line -->
+<div class="flex flex-row justify-between items-center w-full pb-4 border-b border-gray-100">
+<div class="flex flex-wrap gap-x-8 gap-y-4">
+<button class="font-label-bold text-label-bold uppercase tracking-widest border-b-2 border-black pb-1">Все</button>
+<button class="font-label-bold text-label-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors pb-1">Часы</button>
+<button class="font-label-bold text-label-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors pb-1">Сумки</button>
+<button class="font-label-bold text-label-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors pb-1">Обувь</button>
+<button class="font-label-bold text-label-bold uppercase tracking-widest text-gray-400 hover:text-black transition-colors pb-1">Аксессуары</button>
+</div>
+<a class="font-label-bold text-label-bold underline uppercase tracking-wider shrink-0" href="#">Смотреть все</a>
+</div>
+<!-- Search Bar Row -->
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 text-xl group-focus-within:text-black transition-colors">search</span>
+<input class="w-full bg-transparent border-b border-gray-200 focus:border-black focus:ring-0 py-3 pl-8 pr-0 text-sm uppercase tracking-widest placeholder:text-gray-400 transition-colors font-body-md" placeholder="Поиск в каталоге" type="text">
+</div>
+</div>
+</div></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Row 1 -->
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Часы" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuxmEqb5CLEJ9A2D1KHfb20Cj6bOz4kLT4_wPR6E0Aj509hjD6Ir5dEHKVt2n7L9E4foixY78_GbPVbQovwdYGruayHDb8jyiU0BVfd6RntEvpeEj6eoIjioi2xsnX7apwSuP1CB1jJFJmNJMpZEfLytnp7sa4pVOEDteSRS-TO4w2l8GpWOiugMcABDNPHncmmJ4aBoLRiUgpoaPEmJ62M4peyVipFxxC1BUlRwetE4UoG3IIXRb2Mfr0_QuJW8u2J8IHBgS2p7ES">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Часы</p>
+<p class="font-body-md text-body-md">110 000 ₽</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Сумка" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCWcw1wF5XtKTUEPSA6DhmGsEXJl4PZRYIf1YbRJLjgHlwwVTHUv5NVFfZE-lYaCaSlCLcizEjXI3PVJS_1_y3kjrRAmYdjljR3jZoT_g3W7NU7m2EswbGtDOlQI9uTKiQuYvuIB3QhiRI3W5dCDjUV849Tkjhb67WL89x1H6LonKpRWi-fz4paJjZFuiVEk9kpA_4mY6MMz3nE8E68Z5KygDj7Vu9aHy4zh2RnxQF-P86ZDOdiR0UBdWbaxFmpnErYQQDC4awYRq7">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Сумка</p>
+<div class="flex gap-3 items-center">
+<p class="font-body-md text-body-md">75 000 ₽</p>
+<p class="font-body-md text-body-md text-gray-400 line-through">90 000 ₽</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer relative">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden relative">
+<img alt="Обувь" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105" data-alt="Shoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj_xrye2cdwDErLr9dPl7BPUC0ri8PPDRT1BpNPK7j9Pt2WM66qpdL_yQQ1eUYjraHimIWWnm-MOzzVLbmrn-4-6Nn1Qd-LDUxGV4fKziv_t7o8hAjKenQcJ0V1kRkO-RxC3mTyqD84ohiaQc8UQSnfUcTUgUrIL7_uKJPBs0IzRwzJPGSTCDGO3U_3ukMHHg3_47D3My2jdzlg7a9S-8iPbIQDeEG1AIMWUw6nP7ueNQiwb1CQFO3aI_y7fJyleZVMfU0HR1nzU1H">
+<div class="absolute inset-0 bg-white/60 flex items-center justify-center">
+<span class="font-label-bold text-label-bold uppercase border-y border-black py-2">Нет в наличии</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Обувь</p>
+<p class="font-body-md text-body-md text-gray-400">—</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Кошелек" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Wallet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvOab2z8PzMzvfMvb5GnoJW6cpCK7cepU95LORAGk7fxQD20vZbeYO0Z0ZnC3avjywpPAm6aNaKvoSI2yIHgzq3Qs_Di65BMmTPMIaGWLwQVWjGbJwJ5km4Al1lOzgveFsylae0Cmzhe88waqsJ7SKbsYR9_lPTsJWzUuQoBFqurqBKCq0WkaKu1UKLz1UmXG60mpFZ5qImeez9BQWeFtm2uvW3CvHFFMmhuuAvB_xIGHVGti5Eo35DSRs7_QbyHSTt6jUbvXUe4o3">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Кошелек</p>
+<p class="font-body-md text-body-md">22 000 ₽</p>
+</div>
+</div>
+<!-- Row 2 -->
+<!-- Card 5 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Очки" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sunglasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIpXqK_M2NDfjwZF6iMKCj2zpL2rBscRZKu9X5cx7O08hRWTm6O5PimAPE_RtiUTp9s4-HTaqf88jjbKOsWC-Uq1Q0VuBQQyyHBcyrKOC0_rfNUinszRW-dkjGZqG91zJxrbL2vsUBB8uBDXxb_PckaeVFhqCEOwYo-nTexvGC03XNWlhEvXtpbuIr9XY0Ai_bVl3Uv3ecOdph2bavWhmrilwqtASIWNfZJWkfj8ZL60gMbR68ZXEi1PohbjyleRZzChVp2YzNcM9x">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Очки</p>
+<p class="font-body-md text-body-md">35 000 ₽</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Ремень" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Belt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaOl-YkSZ6R4W09ERRpX9l1X9NCdxKtaKuSElkt67Aq7eMOCsji-0c2axxsKBe7wComKg8EY7Yz0j-VmZcZqqEbKWjVZc1-XDP77_n8mXVwes8J5kbAtG8NgBCbGXOX_2DDsdD9vuAsie1LS1DLI5trDZbQx3sTMvIUa4lzi6RH-WxNCm4wtv7qXfnf7n6FABP6JVo0CCVbJ0bVPrSejs4wFv1kFhdg4mYU5It-yHh59I76b0UGQmMFrx9ged4F1TraDmb1BPVeoSr">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Ремень</p>
+<p class="font-body-md text-body-md">18 500 ₽</p>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Запонки" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cufflinks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK7Inzdyl5zJ2tN8c89MeLljGhftLHMdG8LN3A88M90GAdzt0ff7IiLosDvY6ISl7sxd3aExv9uhvCbHq8iPpmIDrq_L4gOwEBvb2Xw6WN5YFZRKDwkO-X9lhtpJKLS6_lKS_VNIAGRnS7dZnaEOEX_YlYdb_1nJMrGTznoMzLZfSBV-QT-Y8e_22eQ4Inv4M_1lrH87uMqF5BgFE-MncclAxs7Z9tKhaQeLxa1Ryj1iWO2g27g8hRvOjYncFMjRCgduS9JojipB0M">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Запонки</p>
+<p class="font-body-md text-body-md">12 000 ₽</p>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Браслет" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bracelet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1JLfpxOs30C1pjiA_D-0wvV-mKmyRgjKtX12HYuNcIU6J4dz73TOe-Txr-E82kro_3SSvU7xw6RGR8PyIfgjs0Y1oSm8GKR_FQYKs51Vim_gjdoo_SQc59yb5GcDQb7Z2nXE4m4yMEqAjLbk5grpQhIEb4OSuZr86EDvz17qDGKJowkr1fNH3kGH0f8WZpOt_XK9rqiZndKPVE0bNeer-20BMDBL37CIncVGVU8Ux8INQ7L0zk7BgPK1ohfLUg3k5kEdmZFH0Wkq2">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Браслет</p>
+<p class="font-body-md text-body-md">45 000 ₽</p>
+</div>
+</div>
+<!-- Row 3 -->
+<!-- Card 9 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Ручка" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury pen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHUj7_M46mKn1n5_Poquu47cmUMywJJBT_oS-wVDOdlmeeDWTrN6uSpqn6zKpQcBtbt59k1xyq0Ldk0BMsxEbcrRLmsMPFTzYdfobdHlhP306VnDgrfnlZV8vjzsvbVNhNW3ryg7ei-OYASw1vMUVnzEmzmC9sIl7yTzOUvVKHYDkeEIv4Nn3NhSlfNJC62fc05TRn6-beH04l1kMBtrmwO3RBUB0xpmB1kyE5nUDrsSW-C5SkHWQy1tZlaTQgiwzHNFTeAY843M7x">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Ручка</p>
+<p class="font-body-md text-body-md">55 000 ₽</p>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Портфель" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Briefcase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaQKG2Yf8OlWOcEFzDJDV5zYr6K-UAq8PtaFcR9GtEsqlXdFi5GOZa8-MfddTAwzyxMHKJ95EWMgtbHKfS_g4otvL6AlS5NGVGj7AfNRhJY4FssVbrqPDXh-jhmj_EazyJKsTmhJm9bCdzBjeikOeNtwTapLPMXGvTYMEBmfc8JI5XF-Hu2MD1kVGLBl3hDkc_zVZS1u2gi6BrFtZ8GlZX7OkEsON1xKG0vch-cm98rCiOyX6rT2B49RUheUDsi4yRu6UfzT6eHZTO">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Портфель</p>
+<p class="font-body-md text-body-md">135 000 ₽</p>
+</div>
+</div>
+<!-- Card 11 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Шарф" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Silk scarf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN_-a3SFQ3szROY4QHBFzndOnJuSkhjLbg3ctCOrPFf8-2da8m2H6ypDE9TLGdDc1F27DcBHpwITKK2WvFQZQfyRlNVKHs3vqJ_dbwDt-P3VdnH6SlbpvU9nzVXLUXsM6CiB141aH1Cc0GWRfu7S8abhzi0eBSag1na_J2_dulj-JhesvtmgGefhtUz8QLcXeYzBPDBHWzomiknYGw0fkD7j1CLfsSdbcF2fxJLFAD5ttHM8yftpuZ74tRBWrhB26NcRP5ytVj8V4Q">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Шарф</p>
+<p class="font-body-md text-body-md">28 000 ₽</p>
+</div>
+</div>
+<!-- Card 12 -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container mb-6 overflow-hidden">
+<img alt="Зажигалка" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury lighter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkhUkozfKGGnXsacVvs3peo_ypIrWAGB2fG5xstFqa37FFg5KZNpNxK7z_QhJOr17MC6nQMJ2RQ8ducwObfiCftHjltpmONefYFcjpB8FHugNTryBhrOCIzRJx8xmZKUElIFDMdCQgDQUFYC7yr8DCLICBEi56QmqrzMEOvHvn2oVUdro0JWCFX9_gBtDoadNG4eVNoIyeuw2Svt_YE52yBgNUBmM1Tp4ZaA70QmnVntZ1W-gAwYsm7gS68_A4mB4MRo5O24Ao66z3">
+</div>
+<div class="space-y-1">
+<p class="font-label-bold text-label-bold uppercase">Зажигалка</p>
+<p class="font-body-md text-body-md">19 000 ₽</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. IMAGE_TEXT (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px] flex flex-col md:flex-row items-center gap-24">
+<div class="w-full md:w-1/2">
+<img alt="" class="w-full aspect-[4/5] object-cover" data-alt="Artisan at work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAidYyTIjHxczqxMCRce8uyqvySIlYmZMhj91rPa_h6jsfShyjtbu4ZdSZDJCGeKVkCezIgw79gU6oFdv3ImJW0iMBoleYxrojkh9FK8u5yaJtuKtxQMtAduSytyyq1hF7oGnpOr3j5i1dKIDCepneH37N8nd2O53dFHCSWchuZkOy0eL0I4G7ArIZhXok3RziKRWjhyd2mIfMfSwGz_ANgMjh47GD8kYxXzI8b8YLIwd6fnel43-ccIEiyM-WJQzCXr3GrKRvE03XD">
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<h2 class="font-h2 text-h2 uppercase">ИНДИВИДУАЛЬНЫЙ ПОШИВ</h2>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed">Почувствуйте мастерство, которое превосходит обыденное. Наша услуга индивидуального пошива посвящена личности, гарантируя, что каждое изделие является отражением вашего совершенства и утонченного вкуса.</p>
+<button class="bg-primary text-white font-label-bold text-label-bold px-12 py-5 hover:bg-white hover:text-black border border-black transition-all duration-300 uppercase">Узнать больше</button>
+</div>
+</section>
+<!-- 7. BOOKING_PREVIEW (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-20 border-y border-gray-200">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<h2 class="font-h2 text-h2 uppercase tracking-tight">ЗАПИСАТЬСЯ НА ВИЗИТ</h2>
+<button class="bg-black text-white font-label-bold text-label-bold px-16 py-6 hover:bg-white hover:text-black border border-black transition-all duration-300 uppercase">Забронировать</button>
+</div>
+</section>
+<!-- 8. 1/2 BLOCK ROW -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px] grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- LOYALTY_CARD -->
+<div class="bg-black p-12 flex flex-col justify-between aspect-[1.6/1]">
+<div class="flex justify-between items-start">
+<div class="font-label-bold text-white uppercase tracking-widest">Карта участника</div>
+<span class="material-symbols-outlined text-white text-4xl" data-icon="contactless">contactless</span>
+</div>
+<div class="space-y-4">
+<div class="text-white/60 font-label-sm uppercase tracking-widest">Баланс</div>
+<div class="text-white text-4xl font-bold">5,400 <span class="text-lg font-normal">баллов</span></div>
+</div>
+<div class="flex justify-between items-end border-t border-white/20 pt-8">
+<div>
+<div class="text-white/60 font-label-sm uppercase tracking-widest">Уровень</div>
+<div class="text-white font-bold uppercase tracking-widest">ПЛАТИНОВЫЙ</div>
+</div>
+<div class="text-right">
+<div class="text-white/60 font-label-sm uppercase tracking-widest">Преимущества</div>
+<div class="text-white font-bold uppercase">5% КЕШБЭК</div>
+</div>
+</div>
+</div>
+<!-- REFERRAL -->
+<div class="border border-black p-12 flex flex-col justify-center items-center text-center aspect-[1.6/1] space-y-6">
+<h3 class="font-h3 text-h3 uppercase">ПРИГЛАСИТЬ ДРУЗЕЙ</h3>
+<p class="font-body-md text-body-md text-secondary max-w-xs">Получите 1 000 баллов за каждого успешно приглашенного друга в наше сообщество.</p>
+<button class="bg-black text-white font-label-bold text-label-bold px-12 py-4 hover:bg-white hover:text-black border border-black transition-all duration-300 uppercase">Поделиться</button>
+</div>
+</section>
+<!-- 9. BANNER (Full, 21:9) -->
+<section class="max-w-[1440px] mx-auto px-12 pb-[120px]">
+<div class="relative aspect-[21/9] overflow-hidden">
+<img alt="" class="w-full h-full object-cover" data-alt="Luxury lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChNtr95U9ko41rT2eLaUVpaS-GKxPKy3hN13DQ3kEa_wcoI76OMqYX8D6OlYge1UKLbDVP-5XW02J12_xsuB1_m0Is10gg2YEolkOS9ALfUX6o-t9eMnhVZ-tMNoA-3Q1BkWOSF3hTt_S2djFO5M7lu-ZutnbEv69ZBtCpcuevqdOTsfQ4LT72X456vqGMpU03lYbwYA-wKe36gZqws9bOTn5KEEPO1-NlTo_PAsLQKw5nAeC-L09ZgqbgFsS-z_hJGjNaIrYAJr2y">
+<div class="absolute bottom-12 left-12 bg-black p-12 max-w-md text-white space-y-6">
+<h2 class="font-h2 text-h2 uppercase">ПРИСОЕДИНЯЙТЕСЬ К КЛУБУ</h2>
+<p class="font-body-md text-body-md text-white/80">Эксклюзивный доступ к мероприятиям только для членов клуба и лимитированным коллекциям.</p>
+<button class="bg-white text-black font-label-bold text-label-bold px-10 py-4 hover:bg-black hover:text-white border border-white transition-all duration-300 uppercase">Подать заявку</button>
+</div>
+</div>
+</section>
+<!-- 10. NEWS_PREVIEW (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px] border-t border-gray-200">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-h2 text-h2 uppercase">ПОСЛЕДНИЕ НОВОСТИ</h2>
+<a class="font-label-bold text-label-bold underline uppercase tracking-wider" href="#">Все новости</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group cursor-pointer">
+<div class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Paris office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEbo9w9oPU3F0dtwsJ-GzTe9Srqys9E_shVGDMOA_UknGSj5wirZ_uOjSFzTSmHGA9TYinZxUB-Y8XdQCAeZ8H8bpIZBHZD8kd47HHY4j6gLmQx434MXyEJS6uB8Gy4eC25k35l8yVzP2nSOz2hgbHqOAgsIGjtPDFE8HzYQ-fF2vEOYhliHU_g0f7fKeftasNkqAXwf4M7Srt3qnbNQF5giAEG1UG4xdN04h4D7wBEFMMOn383Awov0cm9zSTYiHh5pyasHvsc83F">
+</div>
+<p class="font-label-sm text-gray-400 mb-2">12 ОКТЯБРЯ 2024</p>
+<h3 class="font-h3 text-h3 leading-tight group-hover:underline">Расширяем присутствие: новый флагманский магазин в Париже</h3>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZvllMNC-7xKSsa_V5eGtjVK3NYC0W4RFFRCJccM99JB2f_VdcrLaVAGRowaQteDoSX-IYaks3_9DjNww_H7_vuCtZKyXULlSjqU903rUPhLa5QHhNipVP-XQoiVF26F5BZ0hLtLGrEZukHmXzm6SH1PCR1HTg3b_cliD2qGEAxm6UdZ6IbMW8wE-kqFgbA6NhBmfhm1UK58wlboA6iUkX3nEG7fZznoR1C8x3xI5E_svlLA9KR0Y-hKW0387dQ0fqhJ3WjIScWP0">
+</div>
+<p class="font-label-sm text-gray-400 mb-2">05 ОКТЯБРЯ 2024</p>
+<h3 class="font-h3 text-h3 leading-tight group-hover:underline">Искусство минималистичной продуктивности и дизайна</h3>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[16/9] bg-surface-container mb-6 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sustainability" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXcOqi2OqzzjLEXaobatOm18315XRPKn-06-iaUURYGMo3iosr-tkEVvm6XU2RHWmmFAt8vbuMIm24OQSMUo8YWdJuwiR5fCH9204aZelP4qcav5PckbLYoGLJce7qOe6fmcLtio6hIgxH3F56-uDIkrRTbwj-ewUUQ9lwXhlghE7ODNZPgLLutKivUqyhr-42Ta8Bza1KA__K41V0S8XEP0uw-TgKneRHMUcHIyf7q_4eOHBdVYFeeH35mY3HX-Lr8rGpHDBTEDOx">
+</div>
+<p class="font-label-sm text-gray-400 mb-2">28 СЕНТЯБРЯ 2024</p>
+<h3 class="font-h3 text-h3 leading-tight group-hover:underline">Устойчивые практики в современном производстве люкса</h3>
+</div>
+</div>
+</section>
+<!-- 11. BRANCHES (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px] bg-surface-bright border-y border-gray-200">
+<h2 class="font-h2 text-h2 uppercase mb-12">НАШИ АДРЕСА</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200 border border-gray-200">
+<div class="bg-white p-10 space-y-6">
+<h3 class="font-h3 text-h3 uppercase">ЛОНДОН</h3>
+<div class="space-y-1">
+<p class="font-body-md text-secondary">Savile Row 24, Мэйфэр</p>
+<p class="font-body-md text-secondary">+44 20 7123 4567</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+<span class="font-label-sm uppercase">Открыто до 22:00</span>
+</div>
+</div>
+<div class="bg-white p-10 space-y-6">
+<h3 class="font-h3 text-h3 uppercase">НЬЮ-ЙОРК</h3>
+<div class="space-y-1">
+<p class="font-body-md text-secondary">5-я авеню 712, Манхэттен</p>
+<p class="font-body-md text-secondary">+1 212 555 0198</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+<span class="font-label-sm uppercase">Открыто до 21:00</span>
+</div>
+</div>
+<div class="bg-white p-10 space-y-6">
+<h3 class="font-h3 text-h3 uppercase">ТОКИО</h3>
+<div class="space-y-1">
+<p class="font-body-md text-secondary">5-10-1 Гинза, район Тюо</p>
+<p class="font-body-md text-secondary">+81 3 1234 5678</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-red-500 rounded-full"></span>
+<span class="font-label-sm uppercase">Закрыто · Откроется в 10:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. ABOUT (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+<div class="space-y-10">
+<img alt="" class="w-full aspect-[16/9] object-cover" data-alt="Flagship exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbL6tX83EjiXtWgsq6CHPndsb_CuhOlZU9cfdNmjyQ7y4_wZezPI2W32XR23ctxKVfslgLNPJ_ukjvdf9d-7u-4cH5xVf-fcePyMmU6CovcmoXMlhXgXbq-CRqrSiZZLu9uXWSj6lcJFTW2uNKcnH_DeoD-YF95oaSoSnGsZ7H3d73-2XYKIxUNpFJtTmRBAkzJtEW4w0GZkW8p680o96DgBdz9WswAK_-uuah94VoWm_IZY9dbDRMZUjmfudC3eJKroluMV42oejp">
+<div class="space-y-6">
+<p class="font-body-lg text-body-lg text-secondary">Основанный на принципах бескомпромиссного качества и архитектурной точности, PREMIUM BRAND превратился в global-ный символ изысканной жизни. Мы верим, что истинная роскошь заключается в отсечении лишнего, оставляя только суть превосходства.</p>
+<button class="border-b border-black font-label-bold text-label-bold uppercase tracking-wider pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">Читать далее</button>
+</div>
+</div>
+<div class="space-y-12">
+<div class="border-t border-black pt-12">
+<h4 class="font-label-bold text-label-bold uppercase mb-6">Штаб-квартира</h4>
+<div class="space-y-2">
+<p class="font-h3 text-h3">Лондон, Великобритания</p>
+<p class="font-body-lg text-secondary">Savile Row 24, Мэйфэр, Лондон W1S 3PR</p>
+<p class="font-body-lg text-secondary">+44 20 7123 4567</p>
+</div>
+</div>
+<button class="w-full bg-black text-white font-label-bold text-label-bold py-6 hover:bg-white hover:text-black border border-black transition-all duration-300 uppercase">Все адреса</button>
+</div>
+</div>
+</section>
+<!-- 13. FEEDBACK (Full) -->
+<section class="max-w-[1440px] mx-auto px-12 py-[120px] bg-black text-white">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<h2 class="font-h2 text-h2 uppercase text-center md:text-left">МЫ ЦЕНИМ ВАШУ ОБРАТНУЮ СВЯЗЬ</h2>
+<button class="bg-white text-black font-label-bold text-label-bold px-16 py-6 hover:bg-black hover:text-white border border-white transition-all duration-300 uppercase">Оставить отзыв</button>
+</div>
+</section>
+<!-- 14. Footer -->
+<footer class="bg-white border-t border-gray-200 w-full mt-[120px]">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-12 py-16 gap-8">
+<div class="space-y-4">
+<div class="text-lg font-bold text-black uppercase tracking-tighter">PREMIUM BRAND</div>
+<p class="font-['Rubik'] text-xs tracking-tight text-gray-500">© 2024 PREMIUM BRAND. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-4">
+<a class="font-['Rubik'] text-xs tracking-tight text-gray-500 hover:text-black underline transition-opacity duration-200 uppercase" href="#">Карта сайта</a>
+<a class="font-['Rubik'] text-xs tracking-tight text-gray-500 hover:text-black underline transition-opacity duration-200 uppercase" href="#">Юридическая информация</a>
+<a class="font-['Rubik'] text-xs tracking-tight text-gray-500 hover:text-black underline transition-opacity duration-200 uppercase" href="#">Конфиденциальность</a>
+<a class="font-['Rubik'] text-xs tracking-tight text-gray-500 hover:text-black underline transition-opacity duration-200 uppercase" href="#">Контакты</a>
+<a class="font-['Rubik'] text-xs tracking-tight text-gray-500 hover:text-black underline transition-opacity duration-200 uppercase" href="#">Условия</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
